@@ -3,20 +3,20 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { addToCounter, doubleCounter, getRandomNumber } from "./cont/counter";
 import { getRandomDog } from "./cont/dogAPI";
+import Emmiter, { em } from "./view/components/Emmiter";
 
-import EventEmitter from 'eventemitter3';
 
-const em = new EventEmitter();
 
 function App() {
   const [count, setCount] = useState(0);
   const [dogImage, setDogImage] = useState<string | null>(null);
-
+const [emmiter, setEmmiter] = useState('no emit')
 
   useEffect(()=>{
     em.on('test',(a)=>{
       console.log('emitted!',a)
       // console.log(this)
+      setEmmiter(`emiting ${a}`);
     })
    return ()=>{
     em.removeListener('test')
@@ -37,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <h1>My amazing app!!!!</h1>
+      <h2>{emmiter}</h2>
       <div className="card">
         <button onClick={handleAddCounter}>count is {count}</button>
         <button
@@ -52,7 +53,7 @@ function App() {
           MULTIPLE COUNTER
         </button>
       </div>
-      <button onClick={()=>{em.emit('test',count)}}>EMIT</button>
+      <Emmiter />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
