@@ -1,3 +1,3 @@
 export function addToCounter(count: number, setCount: Function): void {
-  setCount(count + 2);
+  setCount(count + 5);
 }
