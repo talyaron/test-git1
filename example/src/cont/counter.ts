@@ -3,6 +3,6 @@ export function addToCounter(count: number, setCount: Function): void {
 }
 
 export function getRandomNumber(count: number, setCount: Function):void{
-  setCount(Math.floor( Math.random()*1000))
+  setCount(Math.floor( Math.random()*6000))
 }
 
