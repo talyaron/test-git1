@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import { addToCounter } from './cont/counter';
+import { addToCounter, getRandomNumber } from './cont/counter';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,6 +24,9 @@ function App() {
       <div className="card">
         <button onClick={handleAddCounter}>
           count is {count}
+        </button>
+        <button onClick={()=>{getRandomNumber(count, setCount)}}>
+          GET RANDOM NUMBER
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
