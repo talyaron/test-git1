@@ -36,7 +36,11 @@ const [emmiter, setEmmiter] = useState('no emit')
 
   return (
     <div className="App">
+<<<<<<< HEAD
       <h1>My amazing app????</h1>
+=======
+      <h1>My amazing app!??&&&&</h1>
+>>>>>>> main
       <h2>{emmiter}</h2>
       <div className="card">
         <button onClick={handleAddCounter}>count is {count}</button>
