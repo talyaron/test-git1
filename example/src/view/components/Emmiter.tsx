@@ -4,7 +4,7 @@ export const em = new EventEmitter();
 
 const Emmiter = () => {
   return (
-    <button onClick={()=>{em.emit('test',Math.random())}}>EMIT</button>
+    <button onClick={()=>{em.emit('test',Math.floor(Math.random()*100))}}>EMIT</button>
   )
 }
 
