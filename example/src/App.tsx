@@ -6,7 +6,7 @@ import { getRandomDog } from "./cont/dogAPI";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [dogImage, setDogImage] = useState<string|null>(null);
+  const [dogImage, setDogImage] = useState<string | null>(null);
 
   function handleAddCounter() {
     addToCounter(count, setCount);
@@ -49,8 +49,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <button onClick={handleGetDogImage}>Fetch random dog</button>
-      {dogImage ? <img className="dogImage" src={dogImage} /> : null}
+      <div className="wrapper">
+        <button onClick={handleGetDogImage}>Fetch random dog</button>
+        {dogImage ? <img className="dogImage" src={dogImage} /> : null}
+      </div>
     </div>
   );
 }
