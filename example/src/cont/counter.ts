@@ -9,3 +9,4 @@ export function getRandomNumber(count: number, setCount: Function): void {
 export function doubleCounter(count: number, setCount: Function): void {
   setCount((count: number) => count * 5);
 }
+
